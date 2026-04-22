@@ -3,3 +3,7 @@ python3 deployment/rpi_inference.py \
     --det-hef ~/models/yolov8n_vru_512_v7.hef \
     --depth-def ~/models/depth_anything_vits_ft.hef \
     --depth-every 3
+
+cd ~/vru-location-estimation
+source ~/vru-env/bin/activate
+export PYTHONPATH=$PYTHONPATH:~/vru-location-estimation
