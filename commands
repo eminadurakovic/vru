@@ -7,3 +7,13 @@ python3 deployment/rpi_inference.py \
 cd ~/vru-location-estimation
 source ~/vru-env/bin/activate
 export PYTHONPATH=$PYTHONPATH:~/vru-location-estimation
+
+python evaluation/evaluate_runtime_pipeline.py \
+  --config configs/config.yaml \
+  --images ~/kitti_calib_subset/images \
+  --labels-dir ~/kitti_calib_subset/labels \
+  --depth-gt ~/kitti_calib_subset/depth_gt \
+  --det-hef ~/models/yolov8n_vru_512_v7.hef \
+  --depth-hef ~/models/depth_anything_vits_ft.hef \
+  --depth-every 2 \
+  --depth-calib configs/depth_calib_pi.npy
