@@ -17,3 +17,12 @@ python evaluation/evaluate_runtime_pipeline.py \
   --depth-hef ~/models/depth_anything_vits_ft.hef \
   --depth-every 2 \
   --depth-calib configs/depth_calib_pi.npy
+
+
+
+python3 deployment/rpi_inference.py \
+    --config configs/config.yaml \
+    --det-hef ~/models/yolov8n_vru_512_v7.hef \
+    --depth-def ~/models/depth_anything_vits_ft.hef \
+    --depth-every 3 \
+    --depth-calib configs/depth_calib_pi.npy
